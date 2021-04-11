@@ -28,8 +28,8 @@
 
 -  ##### 🔑 Authentication
 
-    Authentication is handled through [Hcaptcha](https://www.hcaptcha.com/) service. 
-            - to run in local we need to configure the host file https://docs.hcaptcha.com/#local-development
+    Authentication is handled through [Hcaptcha](https://www.hcaptcha.com/) service.
+    - to run in local we need to configure the host file https://docs.hcaptcha.com/#local-development
 
 -  ##### 💾 Database
 
