@@ -50,14 +50,14 @@
     
     -  To do this, first copy .env.example into a new file in the same folder called .env , then replace the values within with your own API credentials:
     
-    -  ```VUE_APP_NAME=<YOUR APP NAME>
+    -  `VUE_APP_NAME=<YOUR APP NAME>
         VUE_APP_URL=<YOUR APP URL>
         VUE_APP_API=<YOUR APP BACKEND ENDPOINT>
         VUE_APP_SOCKETIO=<YOUR APP BACKEND ENDPOINT>
         VUE_APP_HCAPTCHA=<YOUR HCAPTCHA CLIENT ID>
         VUE_APP_IMAGEKIT_PUBLICKEY=<YOUR IMAGEKIT PUBLIC KEY>
-        VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>
-        ```
+        VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>`
+   
   - ##### 🖥️ Local development
 
     ```
