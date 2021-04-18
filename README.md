@@ -59,7 +59,8 @@
          HCAPTCHA_SECRET=YourHcaptchaSecret
          IMAGEKIT_PUBLICKEY=YourImageKitPublicKey
          IMAGEKIT_PRIVATEKEY=YourImageKitPrivateKey
-         IMAGEKIT_ENDPOINT=YourImageKitEndpoint```
+         IMAGEKIT_ENDPOINT=YourImageKitEndpoint
+         ```
 
   - ##### 🖥️ Local development
 
@@ -83,7 +84,8 @@
           VUE_APP_SOCKETIO=<YOUR APP BACKEND ENDPOINT>
           VUE_APP_HCAPTCHA=<YOUR HCAPTCHA CLIENT ID>
           VUE_APP_IMAGEKIT_PUBLICKEY=<YOUR IMAGEKIT PUBLIC KEY>
-          VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>```
+          VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>
+   ```
 
   - ##### 🖥️ Local development
 
