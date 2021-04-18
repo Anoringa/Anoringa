@@ -48,7 +48,7 @@
 -  ##### 🔧 Configuration
     -  The project needs to be configured with your API endpoints and API keys in order for the authentication flow to work.
     
-    -  To do this, first copy .env.example into two new files in the same folder called .env.development and  .env.production, and replace the values within with your own API credentials:
+    -  To do this, first copy .env.example into a new file in the same folder called .env , then replace the values within with your own API credentials:
     
     -  ```VUE_APP_NAME=<YOUR APP NAME>
         VUE_APP_URL=<YOUR APP URL>
