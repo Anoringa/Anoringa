@@ -6,7 +6,11 @@
 <img src="https://anoringa.win/anoringa.png" width="200">
 
 
+#### FrontEnd
 ![](https://img.shields.io/github/stars/Anoringa/anoringa-frontend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-frontend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-frontend)[![Netlify Status](https://api.netlify.com/api/v1/badges/8f6d440f-6f42-46f3-b462-82aa502f9bc4/deploy-status)](https://app.netlify.com/sites/anoringa/deploys)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-frontend)![](https://img.shields.io/twitter/follow/Anoringa1?label=Follow&style=social)
+
+#### BackEnd
+![](https://img.shields.io/github/stars/Anoringa/anoringa-backend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-backend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-backend)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-backend)![](https://img.shields.io/twitter/follow/Anoringa1?label=Follow&style=social)
 
 
 ### 📖 Prerequisites
