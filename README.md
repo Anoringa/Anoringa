@@ -89,7 +89,7 @@
           VUE_APP_HCAPTCHA=<YOUR HCAPTCHA CLIENT ID>
           VUE_APP_IMAGEKIT_PUBLICKEY=<YOUR IMAGEKIT PUBLIC KEY>
           VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>
-   ```
+         ```
 
   - ##### 🖥️ Local development
 
