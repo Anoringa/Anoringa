@@ -1,0 +1,47 @@
+version: "3"
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
+services:
+  backend:
+    image: nodejs
+    restart: always
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+    MONGO_INITDB_ROOT_USERNAME: root
+    MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+    ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
+  imgpush:
+    # https://github.com/hauxir/imgpush
+    image: hauxir/imgpush:latest
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - <PATH TO STORE IMAGES>:/images
+
+  imgproxy:
+    # https://docs.imgproxy.net/#/installation?id=docker
+    # alternative
+    #       https://github.com/motivast/motimize
+    image: darthsim/imgproxy:latest
+    restart: always
+    ports:
+      - "8080 :8080"
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:
