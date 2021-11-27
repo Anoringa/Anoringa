@@ -29,10 +29,17 @@
 
     the image store is handled through [ImageKit](https://imagekit.io/) service. 
 
--  ##### Host
-
-    in the host file located in C:\Windows\System32\Drivers\etc\hosts add the following line
-    127.0.0.1 test.mydomain.com
+-  ##### Developement PC Network Config - DNS Host
+	-  ##### Edit Host file windows
+		-  ##### using gui tool
+      in the host file located in `C:\Windows\System32\Drivers\etc\hosts` add the following line<br></br>
+      `127.0.0.1 test.mydomain.com`<br></br>
+we recommend to use Notepad++ to edit this file because allows you to run as admin
+		-  ##### also you can use powershell
+```Powershell
+Set-HostsEntry -IPAddress 127.0.0.1 -HostName 'test.mydomain.com'
+Remove-HostsEntry -HostName 'test.mydomain.com'
+```
 
 
 
