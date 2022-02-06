@@ -1,0 +1,79 @@
+version: "3"
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
+services:
+  backend:
+    image: nodejs
+    restart: always
+
+  frontend:
+    image: nodejs
+    restart: always
+
+  nginx:
+    image: nginx:1.15-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/var/www/html
+    depends_on:
+      - webserver
+    command: certonly --webroot --webroot-path=/var/www/html --email sammy@example.com --agree-tos --no-eff-email --staging -d example.com  -d www.example.com
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+    MONGO_INITDB_ROOT_USERNAME: root
+    MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+    ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
+  imgpush:
+    # https://github.com/hauxir/imgpush
+    image: hauxir/imgpush:latest
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - <PATH TO STORE IMAGES>:/images
+
+  imgproxy:
+    # https://docs.imgproxy.net/#/installation?id=docker
+    # alternative
+    #       https://github.com/motivast/motimize
+    image: darthsim/imgproxy:latest
+    restart: always
+    ports:
+      - "8080 :8080"
+
+volumes:
+  dbdata:
+  node_modules:
+
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/sammy/node_project/views/
+      o: bind
+
+networks:
+  app-network:
+    driver: bridge

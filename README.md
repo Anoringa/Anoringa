@@ -22,7 +22,9 @@
 - [Hcaptcha](https://www.hcaptcha.com/).
 
 
-
+<img
+    src="infraestructure_diagram_anoringa.svg"
+    alt="triangle with all three sides equal" />
 
 ### 🏗 Setup
 -  #####  🖼 Image CDN

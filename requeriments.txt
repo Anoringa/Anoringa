@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+
+
+network
+    domain (optional - local dev allowed)
+user
+    security
+        hcaptcha (conatiner bundled coming soon)
+            apikey
+            sitekey
+db
+    mongodb (optional - conatiner bundled)
+        database
+        crendentials
+
+storage
+    images
+        imagekit (conatiner bundled coming soon)
+            apikey
+            token
+issues
+    github_issues (conatiner bundled coming soon)
+        github_project
+            user token
