@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="WI9T0HZ2pTsCkuznbFz-" name="Page-1">
-        <mxGraphModel dx="1311" dy="819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="745" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -217,7 +217,7 @@
                     <mxGeometry x="1049.9" y="60.00000000000004" width="68.62" height="91" as="geometry"/>
                 </mxCell>
                 <mxCell id="KrZsD2rk5TfrwjimneL7-6" value="" style="group" parent="1" vertex="1" connectable="0">
-                    <mxGeometry x="689.2800000000001" y="466.56999999999994" width="94.43000000000006" height="94.43" as="geometry"/>
+                    <mxGeometry x="689.2800000000001" y="466.56999999999994" width="460.7199999999999" height="384.1600000000001" as="geometry"/>
                 </mxCell>
                 <mxCell id="KrZsD2rk5TfrwjimneL7-4" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_256/https://itsolution24x7.com/blog/wp-content/uploads/2020/06/socketio.png;" parent="KrZsD2rk5TfrwjimneL7-6" vertex="1">
                     <mxGeometry width="94.43" height="94.43" as="geometry"/>

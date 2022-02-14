@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "files.associations": {
+        "*.md": "markdown"
+    },
+    "hediet.vscode-drawio.theme": "atlas",
+    "editor.bracketPairColorization.enabled": true

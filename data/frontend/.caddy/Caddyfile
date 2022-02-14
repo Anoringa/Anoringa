@@ -1,0 +1,22 @@
+:443 {
+ root * /srv
+ file_server
+ tls internal {
+   on_demand
+ }
+
+  rewrite /path /path/
+  handle /path/* {
+    uri strip_prefix /path
+    rewrite * /socket.io{path}
+    reverse_proxy test.mydomain.com:3000 {
+      header_up Host {host}
+      header_up X-Real-IP {remote}
+    }
+  }
+}
+
+
+
+# https://github.com/martinkero/todoapp
+# https://caddyserver.com/docs/caddyfile
