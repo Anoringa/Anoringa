@@ -1,9 +1,22 @@
+<div align="center">
+  <br>
+  <img alt="Anoringa" src="https://i.imgur.com/Ay4NXPn.png" width="300px">
+  <h1>🕵️ Anoringa 🕵️</h1>
+  <strong>The anonymous open source social network</strong>
+  <br>
+  <small>the goal is to provide people with a site to discuss current issues and news without bias from other people</small>
+	
+</div>
+<br>
 
-   
-   # Anoringa
-## _The Anonimus social network_
 
-<img src="https://anoringa.win/anoringa.png" width="200">
+
+
+[![anoringa-screencap](https://i.imgur.com/5TM6Fhu.png)
+](https://anoringa.win)
+
+
+
 
 
 #### FrontEnd
@@ -22,34 +35,32 @@
 - [Hcaptcha](https://www.hcaptcha.com/).
 
 
-<img
-    src="infraestructure_diagram_anoringa.svg"
-    alt="triangle with all three sides equal" />
 
 ### 🏗 Setup
 -  #####  🖼 Image CDN
 
     the image store is handled through [ImageKit](https://imagekit.io/) service. 
 
--  ##### Developement PC Network Config - DNS Host
-	-  ##### Edit Host file windows
-		-  ##### using gui tool
-      in the host file located in `C:\Windows\System32\Drivers\etc\hosts` add the following line<br></br>
-      `127.0.0.1 test.mydomain.com`<br></br>
-we recommend to use Notepad++ to edit this file because allows you to run as admin
-		-  ##### also you can use powershell
-```Powershell
-Set-HostsEntry -IPAddress 127.0.0.1 -HostName 'test.mydomain.com'
-Remove-HostsEntry -HostName 'test.mydomain.com'
-```
-
-
-
-
 -  ##### 🔑 Authentication
 
     Authentication is handled through [Hcaptcha](https://www.hcaptcha.com/) service.
     - to run in local we need to configure the host file https://docs.hcaptcha.com/#local-development
+
+
+	-  ##### Developement PC Network Config - DNS Host
+		-  ##### Edit Host file windows
+			-  ##### using gui tool
+			in the host file located in `C:\Windows\System32\Drivers\etc\hosts` add the following line<br></br>
+			`127.0.0.1 test.mydomain.com`<br></br>
+			we recommend to use Notepad++ to edit this file because allows you to run as admin
+			-  ##### also you can use powershell
+			```Powershell
+			Set-HostsEntry -IPAddress 127.0.0.1 -HostName 'test.mydomain.com'
+			Remove-HostsEntry -HostName 'test.mydomain.com'
+			```
+
+
+
 
 -  ##### 💾 Database
 
@@ -58,6 +69,44 @@ Remove-HostsEntry -HostName 'test.mydomain.com'
     - users
     - comments.
 
+## Using Docker
+-  ##### ⬇ Download
+    -  `git clone https://github.com/Anoringa/Anoringa`
+    -  `cd Anoringa`
+
+-  ##### 🔧 Configuration
+    -  Modify .ENV files
+    -  Frontend
+
+		```
+		  VUE_APP_NAME=<YOUR APP NAME>
+		  VUE_APP_URL=<YOUR APP URL>
+		  VUE_APP_API=<YOUR APP BACKEND ENDPOINT>
+		  VUE_APP_SOCKETIO=<YOUR APP BACKEND ENDPOINT>
+		  VUE_APP_HCAPTCHA=<YOUR HCAPTCHA CLIENT ID>
+		  VUE_APP_IMAGEKIT_PUBLICKEY=<YOUR IMAGEKIT PUBLIC KEY>
+		  VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>
+		 ```
+    -  Backend
+		```
+		 SERVER_PORT=3000
+		 SERVER_ADDRESS=0.0.0.0
+		 MONGODB_URL=YourConnectionString
+		 JWT_SECRET=YourSecret
+		 JWT_TIMEOUT_DURATION="12 hours"
+		 HCAPTCHA_SECRET=YourHcaptchaSecret
+		 IMAGEKIT_PUBLICKEY=YourImageKitPublicKey
+		 IMAGEKIT_PRIVATEKEY=YourImageKitPrivateKey
+		 IMAGEKIT_ENDPOINT=YourImageKitEndpoint
+		 ```
+
+-  ##### 🚀 Run
+    -  `docker-compose up`
+
+
+
+
+## Using Baremetal machine
 
 ### Backend
 -  ##### ⬇ Download
