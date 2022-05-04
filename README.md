@@ -64,10 +64,7 @@
 
 -  ##### 💾 Database
 
-    This project uses MongoDB as a database. When you run the program, the ODM [Mongoose](https://mongoosejs.com/) will create the colleactions inner the database. That collections will be named:
-    - posts
-    - users
-    - comments.
+    This project uses MongoDB as a database. When you run the program, the ODM [Mongoose](https://mongoosejs.com/) will create the colleactions inner the database. That collections will be named posts,users and comments.
 
 ## Using Docker
 -  ##### ⬇ Download
