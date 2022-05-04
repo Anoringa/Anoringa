@@ -73,28 +73,50 @@
 
 -  ##### 🔧 Configuration
     -  Modify .ENV files
-    -  Frontend
+    -  data\frontend\.env
 
 		```
-		  VUE_APP_NAME=<YOUR APP NAME>
-		  VUE_APP_URL=<YOUR APP URL>
-		  VUE_APP_API=<YOUR APP BACKEND ENDPOINT>
-		  VUE_APP_SOCKETIO=<YOUR APP BACKEND ENDPOINT>
-		  VUE_APP_HCAPTCHA=<YOUR HCAPTCHA CLIENT ID>
-		  VUE_APP_IMAGEKIT_PUBLICKEY=<YOUR IMAGEKIT PUBLIC KEY>
-		  VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>
+		VUE_APP_NAME=<YOUR APP NAME>
+		# Example App Name:-  
+		# Anoringa
+		
+		VUE_APP_URL=<YOUR APP URL>
+		# Example App URL:-  
+		# http://test.mydomain.com
+		
+		VUE_APP_API=<YOUR APP BACKEND ENDPOINT>
+		# Example App Api:-  
+		# http://localhost:3000
+		
+		VUE_APP_SOCKETIO=<YOUR APP BACKEND ENDPOINT>
+		# Example SocketIO URL:-  
+		# http://localhost:3000
+		
+		VUE_APP_HCAPTCHA=<YOUR HCAPTCHA CLIENT ID>
+		VUE_APP_IMAGEKIT_PUBLICKEY=<YOUR IMAGEKIT PUBLIC KEY> 
+		VUE_APP_IMAGEKIT_ENDPOINT=<YOUR IMAGEKIT ENDPOINT>
+		VUE_APP_ISSUESAPI=<YOUR APP ISSUES API ENDPOINT>
+		VUE_APP_ONESIGNAL_APPID=<YOUR ONESIGNAL APPID>
 		 ```
-    -  Backend
+    -  data\backend\.env
 		```
-		 SERVER_PORT=3000
-		 SERVER_ADDRESS=0.0.0.0
-		 MONGODB_URL=YourConnectionString
-		 JWT_SECRET=YourSecret
-		 JWT_TIMEOUT_DURATION="12 hours"
-		 HCAPTCHA_SECRET=YourHcaptchaSecret
-		 IMAGEKIT_PUBLICKEY=YourImageKitPublicKey
-		 IMAGEKIT_PRIVATEKEY=YourImageKitPrivateKey
-		 IMAGEKIT_ENDPOINT=YourImageKitEndpoint
+		SERVER_PORT=3000
+		SERVER_ADDRESS=0.0.0.0
+		
+		MONGODB_URL=YourConnectionString
+		# Example Connection String:-  
+		# mongodb://127.0.0.1:27017/mydb
+		# mongodb://[MongodbHost]:[PORT]/[DatabaseName]
+		
+		JWT_SECRET=YourSecret
+		# Example Secret:-  
+		# password123
+		
+		JWT_TIMEOUT_DURATION="12 hours"
+		HCAPTCHA_SECRET=YourHcaptchaSecret
+		IMAGEKIT_PUBLICKEY=YourImageKitPublicKey
+		IMAGEKIT_PRIVATEKEY=YourImageKitPrivateKey
+		IMAGEKIT_ENDPOINT=YourImageKitEndpoint
 		 ```
 
 -  ##### 🚀 Run
