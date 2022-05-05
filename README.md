@@ -4,6 +4,8 @@
   <h1>🕵️ Anoringa 🕵️</h1>
   <strong>The anonymous open source social network</strong>
   <br>
+  <strong>this project is also known as imageboard using the MEVN Stack.</strong>
+  <br>
   <small>the goal is to provide people with a site to discuss current issues and news without bias from other people</small>
 	
 </div>
@@ -120,10 +122,25 @@
 		 ```
 
 -  ##### 🚀 Run
+-  ###### Normal
+    External DB,Captcha,ImageStore,Issues Api,Notifications Api
     -  `docker-compose up`
+    -  to remove previuos running intances and build images again
 
+    ```docker-compose rm --all &&
+    docker-compose pull &&
+    docker-compose build --no-cache &&
+    docker-compose up -d --force-recreate
+	```
+-  ###### With DB
+    -  `docker-compose -f ./docker-compose_with_db.yml up`
+    -  to remove previuos running intances and build images again
 
-
+    ```docker-compose rm --all &&
+    docker-compose pull &&
+    docker-compose build --no-cache &&
+    docker-compose -f ./docker-compose_with_db.yml up -d --force-recreate
+	```
 
 ## Using Baremetal machine
 

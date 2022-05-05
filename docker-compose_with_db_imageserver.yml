@@ -10,10 +10,31 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
   backend:
     build:
       context: .
       dockerfile: ./data/backend/anoringa_backend.Dockerfile
+
     restart: unless-stopped
+
     ports:
       - "3000:3000"
+    env_file:
+      - ./data/backend/.env
+  database:
+    image : mongo:5.0.6
+    container_name: mongo_database
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./data/mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+  imgstorage:
+    image: hauxir/imgpush:latest
+    ports:
+      - "5000:5000"
+

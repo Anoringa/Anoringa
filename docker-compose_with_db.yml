@@ -1,0 +1,57 @@
+version: '3.8'
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
+# https://github.com/bezkoder/docker-compose-nodejs-mysql
+# https://docs.docker.com/compose/reference/
+# https://blog.tericcabrel.com/using-docker-and-docker-compose-with-nodejs-and-mongodb/
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./data/frontend/anoringa_frontend_nginx.Dockerfile
+    depends_on:
+      - backend
+    # restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+  backend:
+    build:
+      context: .
+      dockerfile: ./data/backend/anoringa_backend.Dockerfile
+    depends_on:
+      - database
+    # restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # - MONGODB_URL=mongodb://AzureDiamond:hunter2@database/anoposting
+      # https://www.mongodb.com/docs/manual/reference/connection-string/
+      # - MONGODB_URL=mongodb://AzureDiamond:hunter2@127.0.0.1:27017/anoposting
+      # - MONGODB_URL=mongodb://AzureDiamond:hunter2@database:27017/anoposting
+      # - MONGODB_URL=mongodb+srv://AzureDiamond:hunter2@database/anoposting
+      - MONGODB_URL=mongodb://AzureDiamond:hunter2@database:27017/anoposting?authSource=admin
+      # https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose-es
+    links:
+      - database
+    networks:
+      - app-network
+  database:
+    image : mongo:5.0.6
+    container_name: database
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MONGO_INITDB_ROOT_USERNAME=AzureDiamond
+      - MONGO_INITDB_ROOT_PASSWORD=hunter2
+      - MONGO_INITDB_DATABASE=anoposting
+    volumes:
+      - ./data/mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    # restart: unless-stopped
+    networks:
+      - app-network  
+
+networks:
+  app-network:
+    driver: bridge
