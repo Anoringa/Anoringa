@@ -28,6 +28,10 @@
 ![](https://img.shields.io/github/stars/Anoringa/anoringa-backend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-backend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-backend)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-backend)![](https://img.shields.io/twitter/follow/Anoringa1?label=Follow&style=social)
 
 
+#### Project Dashboard (Requested Features, Issues, Reports) 
+[Anoringa Project](https://github.com/orgs/Anoringa/projects/1).
+
+
 ### 📖 Prerequisites
 
 - [Node.js](https://nodejs.org/en/): please refer to their [installation guide](https://nodejs.dev/learn/how-to-install-nodejs).
