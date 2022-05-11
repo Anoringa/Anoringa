@@ -19,13 +19,19 @@
 
 
 
+[![Matrix](https://img.shields.io/matrix/anoringa:matrix.org)](https://matrix.to/#/#anoringa:matrix.org?via=matrix.org)
+
+[![Chat](https://img.shields.io/badge/matrix-+anoringa:matrix.org-purple?style=flat-square)](https://matrix.to/#/+anoringa:matrix.org)
+
+
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg?style=flat-square)](http://www.gnu.org/licenses/agpl-3.0)
+
 
 
 #### FrontEnd
-![](https://img.shields.io/github/stars/Anoringa/anoringa-frontend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-frontend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-frontend)[![Netlify Status](https://api.netlify.com/api/v1/badges/8f6d440f-6f42-46f3-b462-82aa502f9bc4/deploy-status)](https://app.netlify.com/sites/anoringa/deploys)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-frontend)![](https://img.shields.io/twitter/follow/Anoringa1?label=Follow&style=social)
-
+![](https://img.shields.io/github/stars/Anoringa/anoringa-frontend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-frontend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-frontend)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-frontend)[![Netlify Status](https://api.netlify.com/api/v1/badges/8f6d440f-6f42-46f3-b462-82aa502f9bc4/deploy-status)](https://app.netlify.com/sites/anoringa/deploys)
 #### BackEnd
-![](https://img.shields.io/github/stars/Anoringa/anoringa-backend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-backend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-backend)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-backend)![](https://img.shields.io/twitter/follow/Anoringa1?label=Follow&style=social)
+![](https://img.shields.io/github/stars/Anoringa/anoringa-backend) ![](https://img.shields.io/github/forks/Anoringa/anoringa-backend) ![](https://img.shields.io/github/issues/Anoringa/anoringa-backend)![](https://img.shields.io/github/languages/code-size/Anoringa/anoringa-backend)
 
 #### Anoringa Integration (Docker)
 ![](https://img.shields.io/github/stars/Anoringa/Anoringa) ![](https://img.shields.io/github/forks/Anoringa/Anoringa) ![](https://img.shields.io/github/issues/Anoringa/Anoringa)![](https://img.shields.io/github/languages/code-size/Anoringa/Anoringa)![](https://img.shields.io/twitter/follow/Anoringa1?label=Follow&style=social)
