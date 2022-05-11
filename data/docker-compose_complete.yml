@@ -1,0 +1,76 @@
+version: '3.8'
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
+# https://github.com/bezkoder/docker-compose-nodejs-mysql
+# https://docs.docker.com/compose/reference/
+# https://blog.tericcabrel.com/using-docker-and-docker-compose-with-nodejs-and-mongodb/
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./frontend/anoringa_frontend_nginx.Dockerfile
+    depends_on:
+      - backend
+    # restart: unless-stopped
+    ports:
+      - "80:80"
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: ./backend/anoringa_backend.Dockerfile
+    depends_on:
+      - database
+    # restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # - MONGODB_URL=mongodb://AzureDiamond:hunter2@database/anoposting
+      # https://www.mongodb.com/docs/manual/reference/connection-string/
+      # - MONGODB_URL=mongodb://AzureDiamond:hunter2@127.0.0.1:27017/anoposting
+      # - MONGODB_URL=mongodb://AzureDiamond:hunter2@database:27017/anoposting
+      # - MONGODB_URL=mongodb+srv://AzureDiamond:hunter2@database/anoposting
+      - MONGODB_URL=mongodb://AzureDiamond:hunter2@database:27017/anoposting?authSource=admin
+      # https://www.digitalocean.com/community/tutorials/containerizing-a-node-js-application-for-development-with-docker-compose-es
+    links:
+      - database
+    networks:
+      - app-network
+  database:
+    image : mongo:5.0.6
+    container_name: database
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MONGO_INITDB_ROOT_USERNAME=AzureDiamond
+      - MONGO_INITDB_ROOT_PASSWORD=hunter2
+      - MONGO_INITDB_DATABASE=anoposting
+    volumes:
+      - ./mongodb/database:/data/db
+    ports:
+      - 27017:27017
+    # restart: unless-stopped
+    networks:
+      - app-network
+  # https://github.com/hauxir/imgpush 
+  imgstorage:
+    image: hauxir/imgpush:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mediaserver/app:/app
+      - ./mediaserver/images:/images
+      - ./mediaserver/cache:/cache
+  captcha:
+    container_name: captcha
+    build:
+      context: .
+      dockerfile: ./captcha/base64Captcha/Dockerfile
+    ports:
+      - "8777:8777"
+    volumes:
+      - ./captcha/app:/app
+networks:
+  app-network:
+    driver: bridge
+

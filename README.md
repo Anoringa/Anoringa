@@ -136,15 +136,26 @@
     docker-compose build --no-cache &&
     docker-compose up -d --force-recreate
 	```
--  ###### With DB
-    -  `docker-compose -f ./docker-compose_with_db.yml up`
+-  ###### Anoringa with DB
+    -  `docker-compose -f ./data/docker-compose_with_db.yml up`
     -  to remove previuos running intances and build images again
 
     ```docker-compose rm --all &&
     docker-compose pull &&
     docker-compose build --no-cache &&
-    docker-compose -f ./docker-compose_with_db.yml up -d --force-recreate
+    docker-compose -f ./data/docker-compose_with_db.yml up -d --force-recreate
 	```
+-  ###### Coming Soon 🚀 - Anoringa with DB, Image Hosting and Captcha Self Hosted 
+    -  `docker-compose -f ./data/docker-compose_complete.yml up`
+    -  to remove previuos running intances and build images again
+
+    ```docker-compose rm --all &&
+    docker-compose pull &&
+    docker-compose build --no-cache &&
+    docker-compose -f ./data/docker-compose_complete.yml up -d --force-recreate
+	```
+
+
 
 ## Using Baremetal machine
 

@@ -4,9 +4,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/mojocn/base64Captcha"
 	"log"
 	"net/http"
+	"os"
+
+	"github.com/joho/godotenv"
+	"github.com/mojocn/base64Captcha"
 )
 
 //configJsonBody json request body.
@@ -83,6 +86,19 @@ func captchaVerifyHandle(w http.ResponseWriter, r *http.Request) {
 
 //start a net/http server
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	port, ok := os.LookupEnv("PORT")
+	if !ok {
+		fmt.Println("PORT is not present")
+		port = "8777"
+	} else {
+		fmt.Printf("PORT: %s\n", port)
+	}
+
 	//serve Vuejs+ElementUI+Axios Web Application
 	http.Handle("/", http.FileServer(http.Dir("./static")))
 
@@ -92,8 +108,8 @@ func main() {
 	//api for verify captcha
 	http.HandleFunc("/api/verifyCaptcha", captchaVerifyHandle)
 
-	fmt.Println("Server is at :8777")
-	if err := http.ListenAndServe(":8777", nil); err != nil {
+	fmt.Println("Server is at :" + port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
 }

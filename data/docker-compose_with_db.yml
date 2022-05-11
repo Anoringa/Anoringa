@@ -5,19 +5,20 @@ version: '3.8'
 # https://blog.tericcabrel.com/using-docker-and-docker-compose-with-nodejs-and-mongodb/
 services:
   frontend:
+    container_name: frontend
     build:
       context: .
-      dockerfile: ./data/frontend/anoringa_frontend_nginx.Dockerfile
+      dockerfile: ./frontend/anoringa_frontend_nginx.Dockerfile
     depends_on:
       - backend
     # restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
   backend:
+    container_name: backend
     build:
       context: .
-      dockerfile: ./data/backend/anoringa_backend.Dockerfile
+      dockerfile: ./backend/anoringa_backend.Dockerfile
     depends_on:
       - database
     # restart: unless-stopped
@@ -45,7 +46,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=hunter2
       - MONGO_INITDB_DATABASE=anoposting
     volumes:
-      - ./data/mongodb/database:/data/db
+      - ./mongodb/database:/data/db
     ports:
       - 27017:27017
     # restart: unless-stopped
